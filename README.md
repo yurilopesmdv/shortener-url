@@ -12,7 +12,7 @@
 
 Este projeto é uma **API REST robusta e escalável** para encurtamento de URLs, desenvolvida com **NestJS** (Node.js framework) e **PostgreSQL**. O sistema permite que usuários **encurtem URLs** de forma simples, com ou sem autenticação, e oferece funcionalidades avançadas de **gerenciamento de URLs** para usuários autenticados, incluindo listagem, edição e exclusão lógica.
 
-A aplicação foi desenvolvida seguindo os princípios de uma API REST madura (Maturidade 2), com foco em:
+A aplicação foi desenvolvida seguindo os princípios de uma API REST, com foco em:
 
 * **Autenticação JWT** para acesso seguro.
 * **Validação de entrada** rigorosa em todos os endpoints.
@@ -75,7 +75,7 @@ Este projeto utiliza Docker Compose para um ambiente de desenvolvimento isolado 
 
     ```bash
     git clone [https://github.com/yurilopesmdv/shortener-url.git](https://github.com/yurilopesmdv/shortener-url.git)
-    cd seu-projeto-url-shortener
+    cd shortener-url
     ```
 
 2.  **Crie o arquivo de variáveis de ambiente:**
@@ -89,7 +89,7 @@ Este projeto utiliza Docker Compose para um ambiente de desenvolvimento isolado 
     PORT=3000
     ```
     **Observação:**
-    * A `DATABASE_URL` deve apontar para o serviço de banco de dados do Docker Compose.
+    * `DATABASE_URL` deve apontar para o serviço de banco de dados do Docker Compose.
     * `JWT_SECRET` é crucial para a segurança dos tokens.
     * `BASE_URL` é usado para gerar as URLs encurtadas completas.
 
