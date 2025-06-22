@@ -67,14 +67,13 @@ export class UrlController {
   @ApiResponse({
     status: 200,
     description: 'Lista de URLs do usuário.',
-    type: [UrlEntity], // Retorna um array de UrlEntity
+    type: [UrlEntity],
   })
   @ApiResponse({ status: 401, description: 'Não autorizado.' })
-  @ApiBearerAuth('access-token') // Indica que esta rota requer autenticação JWT
+  @ApiBearerAuth('access-token')
   @UseGuards(AuthGuard('jwt'))
   @UseGuards(AuthGuard('jwt'))
   async listUrls(@Req() req: any) {
-    console.log('UrlController - req.user:', req.user);
     const userId = req.user ? req.user.id : undefined;
     if (!userId) {
       console.log('UrlController - userId não encontrado em req.user.sub');

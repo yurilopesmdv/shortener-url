@@ -16,16 +16,15 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('register')
-  @ApiOperation({ summary: 'Registra um novo usuário na aplicação.' }) // Descrição da operação
+  @ApiOperation({ summary: 'Registra um novo usuário na aplicação.' })
   @ApiBody({
     type: RegisterDto,
     description: 'Dados para registrar um novo usuário.',
-  }) // Tipo do corpo da requisição
+  })
   @ApiResponse({
     status: 201,
     description: 'Usuário registrado com sucesso. Retorna o ID do usuário.',
     schema: {
-      // Exemplo de schema de resposta para o registro
       type: 'object',
       properties: {
         id: { type: 'number', example: 1 },
@@ -58,16 +57,15 @@ export class AuthController {
   @ApiOperation({
     summary:
       'Realiza o login do usuário e retorna um token JWT para autenticação.',
-  }) // Descrição da operação
+  })
   @ApiBody({
     type: LoginDto,
     description: 'Credenciais do usuário (email e senha).',
-  }) // Tipo do corpo da requisição
+  })
   @ApiResponse({
     status: 200,
     description: 'Login bem-sucedido. Retorna o token de acesso.',
     schema: {
-      // Schema de resposta para o login (o token)
       type: 'object',
       properties: {
         access_token: {
